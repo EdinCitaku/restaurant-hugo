@@ -148,3 +148,7 @@ link = "https://fb.com/themefisher"
 [[params.footer.socialLink]]
 icon = "instagram"
 link = "https://fb.com/themefisher"
+
+[[params.footer.booking]]
+icon = "booking"
+link = "https://fb.com/themefisher"

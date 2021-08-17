@@ -18,22 +18,6 @@
 				</div>
 			</div>
 			<!-- .col-md-4 close -->
-			<div class="col-md-4">
-				<div class="block wow fadeInLeft" data-wow-delay="700ms">
-					<h3>{{ with site.Params.footer.blogTitle }} {{ . | safeHTML }} {{ end }}</h3>
-					<div class="blog">
-						<ul>
-							{{ range first 3 (where site.Pages "Type" "post") }}
-							{{ "<!-- post -->" | safeHTML }}
-							<li>
-								<h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-								<p>{{ .PublishDate.Format "02 Jan 2006" }}</p>
-							</li>
-							{{ end }}
-						</ul>
-					</div>
-				</div>
-			</div>
 			<!-- .col-md-4 close -->
 			<div class="col-md-4">
 				<div class="block wow fadeInLeft" data-wow-delay="1100ms">
@@ -48,10 +32,15 @@
 					</div>
 					<div class="social-media-link">
 						<h3>{{ with site.Params.footer.socialTitle }} {{ . | safeHTML }} {{ end }}</h3>
-						<ul>
+						<ul style="display: flex; align-items: center; align-content: center;">
 							{{ range site.Params.footer.socialLink }}
 							<li><a href="{{ .link | safeURL }}"><i class="fa fa-{{ .icon }}"></i></a></li>
 							{{ end }}
+
+							{{ range site.Params.footer.booking }}
+							<li><a href="{{ .link | safeURL }}" style="background: #fff;padding-top: 0px;"><i class="fa fa-{{ .icon }}" style="width: 40px;height: 40px;;"></i></a></li>
+							{{ end }}
+
 						</ul>
 					</div>
 				</div>
@@ -61,18 +50,6 @@
 	</div><!-- .containe close -->
 </section><!-- #footer close -->
 {{ end }}
-
-<footer id="footer-bottom">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<div class="block">
-					<p>{{ site.Params.copyright | markdownify }}</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range site.Params.plugins.js}}
