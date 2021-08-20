@@ -138,6 +138,11 @@ icon = "facebook"
 link = "https://fb.com/themefisher"
 
 [[params.footer.socialLink]]
+icon = "tripadvisor"
+link = "https://fb.com/themefisher"
+
+
+[[params.footer.socialLink]]
 icon = "twitter"
 link = "https://fb.com/themefisher"
 
